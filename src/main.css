@@ -1,12 +1,9 @@
-/* EXT */
-
 @font-face {
   font-family: "Nasa";
-  src: url("/assets/fonts/nasalization-rg.ttf");
+  src: url("./assets/fonts/nasalization-rg.ttf");
 }
 
 /* RESET */
-
 body,
 div,
 h1,
@@ -34,7 +31,7 @@ body {
   font-size: 62.5%; /* 16 * 62.5% = 10 */
 }
 
-/* ELEMENTS */
+/* element */
 
 input,
 button {
@@ -49,11 +46,9 @@ button {
 button[disabled] {
   background: #ccc;
   color: #999;
-
-  /* @extend %disabled */
 }
 
-/* CLASSES */
+/* class */
 
 .header-main {
   display: flex;
@@ -71,11 +66,10 @@ button[disabled] {
   margin: auto 0;
 }
 
-.msg-text {
+.status-text {
   width: 100% - 10px;
 }
 
-.fewbahr2k {
-  margin: 5px 5px 0 0;
-  border: 5px solid #fff;
+.thumbnail-image {
+  width: 100px;
 }

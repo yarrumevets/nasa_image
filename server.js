@@ -1,10 +1,7 @@
 const express = require("express");
-
 var app = express();
-
 // var bodyParser = require("body-parser");
 // var jsonParser = bodyParser.json();
-
 const axios = require("axios");
 
 const port = 3000;
@@ -22,8 +19,10 @@ app.get("/nasaimgsearch", (req, res) => {
   var search = req.query.search;
   var searchDesc = req.query.searchDesc;
   console.log("req.query: ", req.query);
-  // @TODO: sanitize search text
-  const queryUrl = `${nasaImgBaseUrl}/search?q=${search}&description=${searchDesc}&media_type=image`;
+
+  const descParam = searchDesc ? `&description=${searchDesc}` : "";
+
+  const queryUrl = `${nasaImgBaseUrl}/search?q=${search}${descParam}&media_type=image`;
   console.log("nasa api query url: ", queryUrl);
   axios.get(queryUrl).then(axiosRes => {
     const displayData = axiosRes.data.collection.items;
@@ -40,7 +39,7 @@ app.get("/nasaimgsearch", (req, res) => {
 });
 
 // Public static folder access.
-app.use("/", express.static(__dirname + "/public"));
+app.use("/", express.static(__dirname + "/dist"));
 
 app.listen(port, function() {
   console.log(`Server listening on port ${port}...`);

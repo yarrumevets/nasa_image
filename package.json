@@ -1,19 +1,31 @@
 {
   "name": "nasa",
   "version": "1.0.0",
-  "description": "Coding exercise.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Steve Murray",
-  "license": "ISC",
+  "description": "Nasa image search.",
   "dependencies": {
-    "axios": "^0.19.0",
-    "express": "^4.17.1"
+    "axios": "^0.19.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "webpack": "^4.41.4",
-    "webpack-cli": "^3.3.10"
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "wp_dev_s_open": "webpack-dev-server --mode development --open",
+    "wp_dev_s": "webpack-dev-server --mode development",
+    "wp_dev": "webpack --mode development",
+    "wp_prod": "webpack --mode production",
+    "test": "echo \"TEST PLACEHOLDER\" && exit 1"
   }
 }

@@ -1,9 +1,11 @@
 // Note: If a webpack.config.js is present, the webpack command picks it up by default. Otherwise use the --config option.
 // Mode (prod/dev) and/or use of the dev-server is set in package.json scripts obj.
+
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  watch: true,
   // standard options:
   entry: "./src/index.js",
   output: {

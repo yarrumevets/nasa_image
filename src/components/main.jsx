@@ -14,7 +14,7 @@ const Main = props => {
   return (
     <main>
       <p id="msg-text" className="status-text">
-        &nbsp;...&nbsp;
+        ...
       </p>
       <div id="image-area">{thumbnails}</div>
     </main>

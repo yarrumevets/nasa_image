@@ -1,7 +1,10 @@
 import("./main.css");
 
-const React = require("react");
-const ReactDOM = require("react-dom");
+// const React = require("react");
+// const ReactDOM = require("react-dom");
+
+import React from "react";
+import ReactDOM from "react-dom";
 
 import Layout from "./components/layout.jsx";
 

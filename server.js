@@ -1,46 +1,27 @@
 const express = require("express");
 var app = express();
-// var bodyParser = require("body-parser");
-// var jsonParser = bodyParser.json();
-const axios = require("axios");
-
 const port = 3000;
+const nasaApi = require("./nasa-api");
 
-const nasaImgBaseUrl = "https://images-api.nasa.gov";
-
-// Log url of every request.
+// Log request url
 app.use("/", (req, res, next) => {
   console.log("req-url: ", req.url);
   next();
 });
 
-// Images search.
+// Images search
 app.get("/nasaimgsearch", (req, res) => {
   var search = req.query.search;
   var searchDesc = req.query.searchDesc;
-  console.log("req.query: ", req.query);
-
-  const descParam = searchDesc ? `&description=${searchDesc}` : "";
-
-  const queryUrl = `${nasaImgBaseUrl}/search?q=${search}${descParam}&media_type=image`;
-  console.log("nasa api query url: ", queryUrl);
-  axios.get(queryUrl).then(axiosRes => {
-    const displayData = axiosRes.data.collection.items;
-    const imageUrlsList = [];
-    displayData.forEach(el => {
-      imageUrlsList.push({
-        thumbnailLink: el.links[0].href,
-        nasaId: el.data[0].nasa_id
-      });
-    });
-    console.log("image urls list: ", imageUrlsList);
-    res.send(imageUrlsList);
+  nasaApi.getImages(search, searchDesc).then(result => {
+    res.send(result);
   });
 });
 
-// Public static folder access.
+// Public static assets
 app.use("/", express.static(__dirname + "/dist"));
 
+// Start server
 app.listen(port, function() {
   console.log(`Server listening on port ${port}...`);
 });

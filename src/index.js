@@ -1,11 +1,9 @@
 import("./main.css");
 
-// const React = require("react");
-// const ReactDOM = require("react-dom");
+import nasaFont from "./assets/fonts/nasalization-rg.ttf";
 
 import React from "react";
 import ReactDOM from "react-dom";
+import App from "./components/app.jsx";
 
-import Layout from "./components/layout.jsx";
-
-ReactDOM.render(<Layout />, document.getElementById("react-root"));
+ReactDOM.render(<App />, document.getElementById("react-root"));

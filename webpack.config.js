@@ -18,10 +18,9 @@ module.exports = {
     compress: true,
     port: 9000
   },
-  // Modules:
   module: {
     rules: [
-      // Babel: transpile to ES2015:
+      // Babel (ES6/React -> ES5)
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
@@ -37,6 +36,7 @@ module.exports = {
         test: /\.css$/, // ex: main.js -> import './style.css'
         use: ["style-loader", "css-loader"] // npm install --save-dev style-loader css-loader
       },
+      // Images
       {
         test: /\.(png)$/,
         use: {
@@ -48,6 +48,7 @@ module.exports = {
           }
         }
       },
+      // Fonts
       {
         test: /\.(ttf)$/,
         use: {

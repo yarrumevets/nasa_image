@@ -5,7 +5,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  watch: true,
+  // watch: true,
   // standard options:
   entry: "./src/index.js",
   output: {

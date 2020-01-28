@@ -27,7 +27,7 @@
     "wp_dev_s": "webpack-dev-server --mode development",
     "wp_dev": "webpack --mode development",
     "wp_prod": "webpack --mode production",
-    "test": "jest ./tests"
+    "test": "jest"
   },
   "jest": {
     "testRegex": "tests/.*\\.(js|jsx)$"

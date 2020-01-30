@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Thumbnail becomes unhidden when the image has loaded 1`] = `
+<img
+  className="main__thumbnail-image hidden"
+  onLoad={[Function]}
+  src="rocket.jpg"
+/>
+`;
+
+exports[`Thumbnail becomes unhidden when the image has loaded 2`] = `
+<img
+  className="main__thumbnail-image "
+  onLoad={[Function]}
+  src="rocket.jpg"
+/>
+`;

@@ -3,8 +3,8 @@ import Thumbnail from "./thumbnail.jsx";
 import PropTypes from "prop-types";
 
 const Main = props => {
-  const thumbnails = props.imageUrls.map(el => {
-    return <Thumbnail src={el} key={el} />;
+  const thumbnails = props.imageUrls.map(imgUrl => {
+    return <Thumbnail src={imgUrl} key={imgUrl} />;
   });
 
   return (
@@ -19,8 +19,8 @@ const Main = props => {
 
 // Props validation
 Main.propTypes = {
-  imageUrls: PropTypes.arrayOf(PropTypes.string)
-  // statusText: PropTypes.string
+  imageUrls: PropTypes.arrayOf(PropTypes.string),
+  statusText: PropTypes.string
 };
 
 export default Main;

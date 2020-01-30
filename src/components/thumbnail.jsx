@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-const handleOnLoad = () => {};
-
 class Thumbnail extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +10,7 @@ class Thumbnail extends Component {
   }
 
   handleOnLoad() {
-    // Prevent showing the empty image with height and border until loaded.
+    // Prevent showing an empty image border until loaded.
     this.setState({ hidden: false });
   }
 
@@ -20,7 +18,8 @@ class Thumbnail extends Component {
     return (
       <img
         src={this.props.src}
-        className={`main__thumbnail-image ${this.state.hidden ? "hidden" : ""}`}
+        className={`main__thumbnail-image`}
+        aria-hidden={this.state.hidden}
         onLoad={this.handleOnLoad.bind(this)}
       />
     );
@@ -29,7 +28,7 @@ class Thumbnail extends Component {
 
 // Props validation
 Thumbnail.propTypes = {
-  imageUrls: PropTypes.string
+  src: PropTypes.string
 };
 
 export default Thumbnail;

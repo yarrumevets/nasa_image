@@ -31,7 +31,9 @@ class Search extends Component {
             onChange={this.props.changeSearchDesc}
             placeholder="(optional)"
           />
-          <button id="button-search">Search</button>
+          <button id="button-search" className="button-search">
+            Search
+          </button>
         </form>
       </nav>
     );

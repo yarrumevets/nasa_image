@@ -10,7 +10,9 @@ const presets = [
       },
       useBuiltIns: "usage"
     }
-  ]
+  ],
+  // Added react preset here for Jest
+  "@babel/preset-react"
 ];
 
 module.exports = { presets };

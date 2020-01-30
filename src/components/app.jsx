@@ -32,22 +32,27 @@ class App extends Component {
   }
 
   doSearch(e) {
-    e.preventDefault();
-    // Remove all images.
+    // Render with no images and display loading indicator.
     this.setState({ imageUrls: [], statusText: "searching..." });
-    const descParam = this.state.searchDesc
-      ? `&searchDesc=${this.state.searchDesc}`
-      : "";
-    const queryUrl = `/nasaimgsearch?search=${this.state.search}${descParam}`;
-    axios.get(queryUrl).then(axiosRes => {
+    e.preventDefault();
+    this.nasaImageQuery(this.state.search, this.state.searchDesc).then(
+      imageUrls => {
+        // Remove loading indicator and render with new images.
+        this.setState({ imageUrls, statusText: "" });
+      }
+    );
+  }
+
+  nasaImageQuery(search, searchDesc) {
+    const descParam = searchDesc ? `&searchDesc=${searchDesc}` : "";
+    const queryUrl = `/nasaimgsearch?search=${search}${descParam}`;
+    return axios.get(queryUrl).then(axiosRes => {
       var imageUrlsList = axiosRes.data;
       const imageUrls = [];
       imageUrlsList.forEach(function(thumb) {
-        // nasaId can be passed along to be used as the list item key.
-        // Currently setting the image url as the key.
-        imageUrls.push(thumb.thumbnailLink);
+        imageUrls.push(thumb);
       });
-      this.setState({ imageUrls, statusText: "" });
+      return imageUrls;
     });
   }
 

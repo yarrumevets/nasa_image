@@ -2,7 +2,8 @@
 
 exports[`Thumbnail becomes unhidden when the image has loaded 1`] = `
 <img
-  className="main__thumbnail-image hidden"
+  aria-hidden={true}
+  className="main__thumbnail-image"
   onLoad={[Function]}
   src="rocket.jpg"
 />
@@ -10,7 +11,8 @@ exports[`Thumbnail becomes unhidden when the image has loaded 1`] = `
 
 exports[`Thumbnail becomes unhidden when the image has loaded 2`] = `
 <img
-  className="main__thumbnail-image "
+  aria-hidden={false}
+  className="main__thumbnail-image"
   onLoad={[Function]}
   src="rocket.jpg"
 />

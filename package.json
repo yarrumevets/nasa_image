@@ -25,12 +25,11 @@
     "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
-    "start": "node server.js",
-    "wp_dev_s_open": "webpack-dev-server --mode development --open",
-    "wp_dev_s": "webpack-dev-server --mode development",
-    "wp_dev": "webpack --mode development",
-    "wp_prod": "webpack --mode production",
-    "test2": "jest --verbose --coverage",
+    "start": "npm run wpprod && npm run test && npm run start_server",
+    "start_server": "node server.js",
+    "wpdevserver": "webpack-dev-server --mode development --open",
+    "wpdev": "webpack --mode development",
+    "wpprod": "webpack --mode production",
     "test": "jest",
     "test_snap_update": "jest --updateSnapshot"
   },

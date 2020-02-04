@@ -4,6 +4,14 @@ const nasaApi = require("./nasa-api");
 var app = express();
 const port = 4321;
 
+// Show visits in console.
+router.use((req, res, next) => {
+  console.log(
+    `Visitor at ${moment().format("YYYY MMMM Do (dddd) @ h:mm:ss a")}) params: ${req.params}`
+  );
+  next();
+});
+
 // Images search.
 app.get("/nasaimgsearch", (req, res) => {
   var search = req.query.search;

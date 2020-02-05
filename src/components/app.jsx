@@ -45,7 +45,7 @@ class App extends Component {
 
   nasaImageQuery(search, searchDesc) {
     const descParam = searchDesc ? `&searchDesc=${searchDesc}` : "";
-    const queryUrl = `/nasaimgsearch?search=${search}${descParam}`;
+    const queryUrl = `nasaimgsearch?search=${search}${descParam}`;
     return axios.get(queryUrl).then(axiosRes => {
       var imageUrlsList = axiosRes.data;
       const imageUrls = [];
